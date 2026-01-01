@@ -29,4 +29,4 @@
 #define IN_USE       1
 #define NOT_IN_USE   0
 
-#define USING(cond)  (1 + cond == 2)
+#define USING(cond)  (cond == 1)

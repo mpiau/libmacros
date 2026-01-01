@@ -35,7 +35,7 @@
 #  define OS_ANDROID IN_USE
 #  define OS_LINUX   NOT_IN_USE
 
-#elif defined(__gnu_linux__) // Don't use __linux__ use Android also defines it.
+#elif defined(__gnu_linux__) // Don't use __linux__ as Android also defines it.
 #  define OS_WINDOWS NOT_IN_USE
 #  define OS_APPLE   NOT_IN_USE
 #  define OS_ANDROID NOT_IN_USE
