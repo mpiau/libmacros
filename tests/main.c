@@ -1,4 +1,5 @@
 #include "libmacros/libmacros.h"
+
 #include <assert.h>
 #include <stdio.h>
 
@@ -22,7 +23,6 @@ typedef enum Test Test;
 
 static_assert(Test_Letter_Count == 3);
 static_assert(Test_Count == 5);
-
 
 
 [[nodiscard]] static inline

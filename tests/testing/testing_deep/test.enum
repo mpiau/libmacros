@@ -1,0 +1,27 @@
+{
+   "include_list": [
+      "<stdint.h>"
+      "<stdio.h>"
+   ],
+   "name": "WindDirection",
+   "type": "uint8_t",
+   "members": [
+      {
+         "name": "NORTH",
+         "desc": "",
+         "value": 0
+      },
+      {
+         "name": "SOUTH",
+         "desc": "",
+      },
+      {
+         "name": "EAST",
+         "desc": "",
+      },
+      {
+         "name": "WEST",
+         "desc": "",
+      },
+   ]
+}
