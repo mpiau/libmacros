@@ -1,7 +1,4 @@
 #include "libmacros/libmacros.h"
-#include "libmacros/macro_compilers.h"
-#include "libmacros/macro_os_endianness.h"
-#include "libmacros/macro_utils.h"
 #include <assert.h>
 #include <stdio.h>
 
