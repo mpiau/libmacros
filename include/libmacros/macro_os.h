@@ -21,25 +21,25 @@
 #  define OS_WINDOWS IN_USE
 #  define OS_APPLE   NOT_IN_USE
 #  define OS_ANDROID NOT_IN_USE
-#  define OS_LINUX   NOT_IN_USE
+#  define OS_GNU     NOT_IN_USE
 
 #elif defined(__APPLE__)
 #  define OS_WINDOWS NOT_IN_USE
 #  define OS_APPLE   IN_USE
 #  define OS_ANDROID NOT_IN_USE
-#  define OS_LINUX   NOT_IN_USE
+#  define OS_GNU     NOT_IN_USE
 
 #elif defined(__ANDROID__)
 #  define OS_WINDOWS NOT_IN_USE
 #  define OS_APPLE   NOT_IN_USE
 #  define OS_ANDROID IN_USE
-#  define OS_LINUX   NOT_IN_USE
+#  define OS_GNU     NOT_IN_USE
 
 #elif defined(__gnu_linux__) // Don't use __linux__ as Android also defines it.
 #  define OS_WINDOWS NOT_IN_USE
 #  define OS_APPLE   NOT_IN_USE
 #  define OS_ANDROID NOT_IN_USE
-#  define OS_LINUX   IN_USE
+#  define OS_GNU     IN_USE
 
 #else
 #  error The Operating System used to compile this file is not currently supported.
@@ -47,7 +47,9 @@
 #endif
 
 
+#define OS_LINUX   USING(OS_GNU) || USING(OS_ANDROID)
+
 //------------------------------------------------------------------------------------------------
 
 // Ensures that only one of the macros is defined as IN_USE.
-static_assert(USING(OS_WINDOWS) + USING(OS_APPLE) + USING(OS_ANDROID) + USING(OS_LINUX) == 1);
+static_assert(USING(OS_WINDOWS) + USING(OS_APPLE) + USING(OS_ANDROID) + USING(OS_GNU) == 1);
