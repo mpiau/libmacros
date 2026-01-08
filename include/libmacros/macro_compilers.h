@@ -17,17 +17,17 @@
 // Compiler Identification
 //================================================================================================
 
-#if defined(__clang__)
+#if defined __clang__
 #  define COMPILER_CLANG   IN_USE
 #  define COMPILER_GCC     NOT_IN_USE
 #  define COMPILER_MSVC    NOT_IN_USE
 
-#elif defined(__GNUC__) || defined(__GNUG__)
+#elif defined __GNUC__ || defined __GNUG__
 #  define COMPILER_CLANG   NOT_IN_USE
 #  define COMPILER_GCC     IN_USE
 #  define COMPILER_MSVC    NOT_IN_USE
 
-#elif defined(_MSC_VER)
+#elif defined _MSC_VER
 #  define COMPILER_CLANG   NOT_IN_USE
 #  define COMPILER_GCC     NOT_IN_USE
 #  define COMPILER_MSVC    IN_USE

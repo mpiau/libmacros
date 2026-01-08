@@ -23,11 +23,11 @@
 #endif
 
 
-#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_BIG_ENDIAN__)
+#if defined __BYTE_ORDER__ && __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__
 #   define OS_ENDIANNESS_LITTLE  NOT_IN_USE
 #   define OS_ENDIANNESS_BIG     IN_USE
 
-#elif defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
+#elif defined __BYTE_ORDER__ && __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
 #   define OS_ENDIANNESS_LITTLE  IN_USE
 #   define OS_ENDIANNESS_BIG     NOT_IN_USE
 

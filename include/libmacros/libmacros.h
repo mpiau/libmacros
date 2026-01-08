@@ -7,4 +7,3 @@
 #include "libmacros/macro_os_endianness.h"
 #include "libmacros/macro_os.h"
 #include "libmacros/macro_utils.h"
-

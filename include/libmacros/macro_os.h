@@ -17,25 +17,26 @@
 // Operating System (OS) Identification
 //================================================================================================
 
-#if defined( WIN32 ) || defined( _WIN32 ) || defined( __WIN32__ ) || defined( __NT__ )
+#if defined WIN32 || defined _WIN32 || defined __WIN32__ || defined __NT__
 #  define OS_WINDOWS IN_USE
 #  define OS_APPLE   NOT_IN_USE
 #  define OS_ANDROID NOT_IN_USE
 #  define OS_GNU     NOT_IN_USE
 
-#elif defined(__APPLE__)
+#elif defined __APPLE__
 #  define OS_WINDOWS NOT_IN_USE
 #  define OS_APPLE   IN_USE
 #  define OS_ANDROID NOT_IN_USE
 #  define OS_GNU     NOT_IN_USE
 
-#elif defined(__ANDROID__)
+#elif defined __ANDROID__
 #  define OS_WINDOWS NOT_IN_USE
 #  define OS_APPLE   NOT_IN_USE
 #  define OS_ANDROID IN_USE
 #  define OS_GNU     NOT_IN_USE
 
-#elif defined(__gnu_linux__) // Don't use __linux__ as Android also defines it.
+#elif defined __gnu_linux__
+// Don't use __linux__ as Android also defines it.
 #  define OS_WINDOWS NOT_IN_USE
 #  define OS_APPLE   NOT_IN_USE
 #  define OS_ANDROID NOT_IN_USE
