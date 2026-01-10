@@ -17,8 +17,8 @@
 // Operating System (OS) Architecture Identification
 //================================================================================================
 
-#if defined __LP64__   || defined _LP64    || defined __amd64__   || defined __amd64 \
- || defined __x86_64__ || defined __x86_64 || defined __aarch64__ || defined _WIN64
+#if   defined __LP64__   || defined _LP64    || defined __amd64__   || defined __amd64 \
+   || defined __x86_64__ || defined __x86_64 || defined __aarch64__ || defined _WIN64
 #  define OS_ARCH_64_BITS   IN_USE
 #  define OS_ARCH_32_BITS   NOT_IN_USE
 

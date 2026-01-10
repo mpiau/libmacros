@@ -25,10 +25,14 @@ static void print_usings(void)
 
    printf("\nOperating System\n");
    PRINT_USING(OS_WINDOWS);
-   PRINT_USING(OS_APPLE);
+   PRINT_USING(OS_MAC);
+   PRINT_USING(OS_IOS);
    PRINT_USING(OS_ANDROID);
    PRINT_USING(OS_GNU);
+   PRINT_USING(OS_APPLE);
    PRINT_USING(OS_LINUX);
+   PRINT_USING(OS_MOBILE);
+   PRINT_USING(OS_PC);
 
    printf("\nOperating System - Architecture\n");
    PRINT_USING(OS_ARCH_32_BITS);

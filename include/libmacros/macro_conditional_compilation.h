@@ -22,7 +22,7 @@
 // defined but not set to any value.
 
 #if defined IN_USE || defined NOT_IN_USE || defined USING
-   #error IN_USE / NOT_IN_USE / USING already defined somewhere else !
+#  error IN_USE / NOT_IN_USE / USING already defined somewhere else !
 #endif
 
 #define IN_USE       1
