@@ -48,7 +48,7 @@
 #endif
 
 
-#define OS_LINUX   USING(OS_GNU) || USING(OS_ANDROID)
+#define OS_LINUX     USING(OS_GNU) || USING(OS_ANDROID)
 
 //------------------------------------------------------------------------------------------------
 

@@ -18,8 +18,8 @@
 //================================================================================================
 
 // The goal of these defines is to provide an uniform way of declaring conditional-compilation
-// components across the project. It also prevents the mistake of checking if the value is
-// defined instead of being true/false.
+// components across the project. It also prevents the mistake of using a define that has been
+// defined but not set to any value.
 
 #if defined IN_USE || defined NOT_IN_USE || defined USING
    #error IN_USE / NOT_IN_USE / USING already defined somewhere else !
