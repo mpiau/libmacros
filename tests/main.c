@@ -3,6 +3,7 @@
 #include <assert.h>
 #include <stdio.h>
 
+
 [[nodiscard]] static inline
 char const *using_to_str(bool const value)
 {
