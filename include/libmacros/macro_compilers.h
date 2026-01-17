@@ -1,15 +1,5 @@
 #pragma once
 
-// Example of usage:
-// -----------------
-//
-// #if USING(COMPILER_GCC) || USING(COMPILER_CLANG)
-// [...]
-// #elif USING(COMPILER_MSVC)
-// [...]
-// #endif
-//
-
 #include "macro_conditional_compilation.h"
 
 

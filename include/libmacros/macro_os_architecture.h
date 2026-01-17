@@ -1,15 +1,5 @@
 #pragma once
 
-// Example of usage:
-// -----------------
-//
-// #if USING(OS_ARCH_64_BITS)
-// [...]
-// #else
-// [...]
-// #endif
-//
-
 #include "macro_conditional_compilation.h"
 
 

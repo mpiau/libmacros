@@ -50,8 +50,8 @@ int main(void)
    char const array1[255] = {};
    int  const array2[16] = {};
 
-   assert(sizeofArrayElem(array1) == 255);
-   assert(sizeofArrayElem(array2) == 16);
+   assert(arrayCapacity(array1) == 255);
+   assert(arrayCapacity(array2) == 16);
 
    print_usings();
 
