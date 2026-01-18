@@ -1,4 +1,5 @@
 #include "libmacros/libmacros.h"
+#include "libmacros/macro_utils.h"
 
 #include <assert.h>
 #include <stdio.h>
@@ -45,13 +46,48 @@ static void print_usings(void)
 #undef PRINT_USING
 }
 
+enum Signed   : int      { Signed_VALUE };
+enum Unsigned : unsigned { Unsigned_VALUE };
+
+static_assert(type_is_signed(char));
+static_assert(type_is_signed(int));
+static_assert(type_is_signed(long const));
+static_assert(type_is_signed(float));
+static_assert(type_is_signed(double volatile));
+static_assert(type_is_signed(_BitInt(16)));
+static_assert(type_is_signed(enum Signed const volatile));
+
+static_assert(type_is_unsigned(unsigned char));
+static_assert(type_is_unsigned(unsigned int const));
+static_assert(type_is_unsigned(unsigned long volatile));
+static_assert(type_is_unsigned(bool const volatile));
+static_assert(type_is_unsigned(unsigned _BitInt(16)));
+static_assert(type_is_unsigned(enum Unsigned));
+
+// static_assert(types_same(int, int));
+// static_assert(types_same(int const, int const));
+// static_assert(types_same(enum Signed, int));
+
+// static_assert(types_not_same(int, int const) && types_size_equal(int, int const));
+// static_assert(types_not_same(int, long) && types_size_not_equal(int, long));
+// static_assert(types_not_same(enum Signed const, int));
+// static_assert(types_not_same(int, _BitInt(32)));
+// static_assert(types_not_same(int volatile, int));
+
 int main(void)
 {
    char const array1[255] = {};
-   int  const array2[16] = {};
+   int  volatile array2[16] = {};
+   char const volatile array3[8] = {};
 
-   assert(arrayCapacity(array1) == 255);
-   assert(arrayCapacity(array2) == 16);
+   static_assert(array_capacity(array1) == 255);
+   static_assert(var_is_const(array1) && var_is_not_volatile(array1));
+
+   static_assert(array_capacity(array2) == 16);
+   static_assert(var_is_not_const(array2) && var_is_volatile(array2));
+
+   static_assert(array_capacity(array3) == 8);
+   static_assert(var_is_const_volatile(array3));
 
    print_usings();
 
