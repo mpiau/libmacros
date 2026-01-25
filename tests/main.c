@@ -64,15 +64,6 @@ static_assert(type_is_unsigned(bool const volatile));
 static_assert(type_is_unsigned(unsigned _BitInt(16)));
 static_assert(type_is_unsigned(enum Unsigned));
 
-// static_assert(types_same(int, int));
-// static_assert(types_same(int const, int const));
-// static_assert(types_same(enum Signed, int));
-
-// static_assert(types_not_same(int, int const) && types_size_equal(int, int const));
-// static_assert(types_not_same(int, long) && types_size_not_equal(int, long));
-// static_assert(types_not_same(enum Signed const, int));
-// static_assert(types_not_same(int, _BitInt(32)));
-// static_assert(types_not_same(int volatile, int));
 
 int main(void)
 {

@@ -1,5 +1,8 @@
 #pragma once
 
+#include "macro_compilers.h"
+
+
 //================================================================================================
 // Array Capacity
 //================================================================================================
@@ -23,24 +26,6 @@
 
 #define types_size_equal(T, U)     (sizeof(T) == sizeof(U))
 #define types_size_not_equal(T, U) (!types_size_equal(T, U))
-
-/*
-   When I wrote this code and then checked the differences between an int and a const enum : int,
-   I was surprised to see that it worked on GCC (not Clang, which was expected outcome).
-   It seems that GCC still uses the underlying type of the enum and for whatever reason, doesn't
-   care about the const difference ? And making dummy pointers don't change the outcome.
-   I also tried to use some builtins like __builtin_types_compatible_p but it doesn't take into
-   account const/volatile.
-   I'll disable that specific macro for now, the time to find a proper solution.
-*/
-#if 0
-#define types_same(T, U) \
-   _Generic(             \
-      T, U: true,        \
-      default: false     \
-   )
-#define types_not_same(T, U) (!types_same(T, U))
-#endif
 
 
 //================================================================================================
